@@ -1,0 +1,46 @@
+<div class="container col-md-8 mt-5">
+    <form action="/car/add" method="post" class="card p-3 bg-light text-center">
+        <h2 class="text text-primary">Add new car</h2>
+        <div class="form-group">
+            <label class="text-success h6">car Name</label>
+            <input class="form-control" type="text" name="name" required minlength="3" maxlength="20">
+        </div>
+
+        <div class="form-group mt-3">
+            <label class="text-success h6">car description</label>
+            <input class="form-control" type="text" name="description" required minlength="3" maxlength="200">
+        </div>
+
+        <div class="form-group mt-3">
+            <label class="text-success h6">car size</label>
+            <input class="form-control" type="text" name="size" required minlength="1" maxlength="3">
+        </div>
+      <div class="form-group mt-3">
+            <label class="text-success h6">car Image</label>
+            <input class="form-control" type="text" name="image" required>
+        </div>
+
+      
+        <div class="form-group mt-3">
+            <label class="text-success h6">car date</label>
+            <input class="form-control" type="date" name="date" required>
+        </div>
+        
+        <div class="form-group mt-3">
+            <label class="text-success h6">car price</label>
+            <input class="form-control" type="number" name="price" required min=5 max=100>
+        </div>
+
+        <div class="form-group mt-3">
+            <label class="text-success h6">car quantity</label>
+            <input class="form-control" type="number" name="quantity" required min=10 max=50>
+        </div>
+        {{!-- <div class="form-group mt-3">
+            <label class="text-success h6">Graduated</label>
+            <input type="checkbox" name="graduated" value="true">
+        </div> --}}
+        <div class="form-group mt-3">
+            <input class="btn btn-primary mt-3" type="submit" value="Add">
+        </div>
+    </form>
+</div>

@@ -1,0 +1,53 @@
+
+<table class="table bg-light p-4 mt-3 mb-3 text-center">
+
+<tr>
+    <th colspan="5">
+        <select class="form-control" onchange="window.location.href=this.value">
+            <option value="">Sort by name</option>
+            <option value="/car/sort/asc">A->Z</option>
+            <option value="/car/sort/desc">Z->A</option>
+        </select>
+    </th>
+    <th colspan="1">
+        <form action="/car/search" method="post">
+            <div class="form-group">
+                <input class="form-control" type="search" name="name" placeholder="Search by name">
+            </div>
+        </form>
+    </th>
+    <th>
+        <a class="btn btn-primary " href="/car/add">ADD</a>
+        <a class="btn btn-success " href="/car/drop" onclick="return confirm('Are you sure to drop all car ?');">DROP</a>
+    </th>
+</tr>
+       
+    
+   
+</table>
+<h3 class="text-primary text-center" colspan="5">car List</h3>
+
+<div class="container text-center">
+    <div class="card-group">
+        <div class="row">
+            {{#each car}}
+            <div class="card col-md-3 m-3">
+                <a href="/car/detail/{{_id}}">
+                    <img class="card-img-top mt-4" src="{{image}}" width="200" height="200">
+                </a></div>
+                <div class="col-md-8">
+                <div class="card-body">
+                    <h4 class="card-title text-success">{{name}}</h4>
+                    <p class="card-text text-danger">${{price}}</p>
+
+                    <a href="/car/detail/{{_id}}" ><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXVX9kiXamDGsxQe1UNYcYP_6m1BpHUc4FHA&usqp=CAU"width="50" height="50"></a>
+                    <a  href="/car/edit/{{_id}}"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS33MP_ljgivJXWb_R42jEMBM4xWxP8vJN1FAwqtaK-wQ&s" width="50" height="50"></a>
+                    <a  href="/car/delete/{{_id}}"
+                        onclick="return confirm('Are you sure to delete all ?')"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCdDKQMFDwfhQ7MEvV5x4x6iU-booAcq54KQ&usqp=CAU"width="50" height="50"></a>
+                </div>
+                </div>
+            
+            {{/each}}
+        </div>
+    </div>
+</div>

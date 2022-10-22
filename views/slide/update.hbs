@@ -1,0 +1,48 @@
+<div class="container col-md-8 mt-5">
+    <form action="/slide/edit/{{slide._id}}" method="post" class="card p-3 bg-light text-center">
+        <h2 class="text text-primary">Edit slide</h2>
+        <div class="form-group">
+            <label class="text-success h6">slide Name</label>
+            <input class="form-control" type="text" name="name" value="{{slide.name}}" required minlength="3"
+                maxlength="20">
+        </div>
+        <div class="form-group mt-3">
+            <label class="text-success h6">slide description</label>
+            <input class="form-control" type="text" name="description" value="{{slide.description}}" required
+                minlength="3" maxlength="200">
+        </div>
+
+        <div class="form-group mt-3">
+            <label class="text-success h6">slide color</label>
+            <input class="form-control" type="text" name="color" value="{{slide.color}}" required minlength="3"
+                maxlength="200">
+        </div>
+       
+        <div class="form-group mt-3">
+            <label class="text-success h6">slide Image</label><br>
+            <img src="{{slide.image}}" width="100" height="100">
+            <input class="form-control mt-3" type="text" name="image" value="{{slide.image}}" required>
+        </div>
+        <div class="form-group mt-3">
+            <label class="text-success h6">slide date</label>
+            <input class="form-control" type="date" name="date" value="{{dateFormat slide.date 'YYYY-MM-DD'}}" required>
+        </div>
+
+        <div class="form-group mt-3">
+            <label class="text-success h6">slide price</label>
+            <input class="form-control" type="number" name="price" value="{{slide.price}}" required min=0 max=500>
+        </div>
+        {{!-- <div class="form-group mt-3">
+            <label class="text-success h6">status</label>
+            {{#equal slide.status true}}
+            <input type="checkbox" value="true" true>
+            {{/equal}}
+            {{#equal slide.status false}}
+            <input type="checkbox" value="false" false>
+            {{/equal}}
+        </div> --}}
+        <div class="form-group mt-3">
+            <input class="btn btn-primary mt-3" type="submit" value="Edit">
+        </div>
+    </form>
+</div>

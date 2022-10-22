@@ -1,0 +1,49 @@
+<table class="table bg-light p-4 mt-3 mb-3 text-center">
+
+    <tr>
+        <th colspan="5">
+            <select class="form-control" onchange="window.location.href=this.value">
+                <option value="">Sort by name</option>
+                <option value="/slide/sort/asc">Ascending</option>
+                <option value="/slide/sort/desc">Descending</option>
+            </select>
+        </th>
+        <th colspan="1">
+            <form action="/slide/search" method="post">
+                <div class="form-group">
+                    <input class="form-control" type="search" name="name" placeholder="Search by name">
+                </div>
+            </form>
+        </th>
+        <th>
+            <a class="btn btn-primary " href="/slide/add">ADD</a>
+            <a class="btn btn-success " href="/slide/drop"
+                onclick="return confirm('Are you sure to drop all slide ?');">DROP</a>
+        </th>
+    </tr>
+
+
+
+</table>
+<h3 class="text-primary text-center" colspan="5">slide List</h3>
+
+<div class="container text-center">
+    <div class="card-group">
+        <div class="row">
+            {{#each slide}}
+            <div class="card col-md-3 m-3">
+                <a href="/slide/detail/{{_id}}">
+                    <img class="card-img-top mt-4" src="{{image}}" width="200" height="200">
+                </a>
+                <div class="card-body">
+                    <h4 class="card-title text-success">{{name}}</h4>
+            <a href="/car/detail/{{_id}}" class="btn btn-primary">See Profile</a>
+            <a class="btn btn-warning" href="/car/edit/{{_id}}">EDIT</a>
+            <a class="btn btn-danger" href="/car/delete/{{_id}} "
+                onclick="return confirm('Are you sure to delete all ?')">DELETE</a>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div>
